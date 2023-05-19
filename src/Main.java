@@ -2,10 +2,12 @@ import br.com.benezinhobank.model.Agencia;
 import br.com.benezinhobank.model.Banco;
 import br.com.benezinhobank.model.ContaCorrente;
 import br.com.benezinhobank.model.ContaPoupanca;
+import br.com.benezinhobank.pessoa.model.Pessoa;
 import br.com.benezinhobank.pessoa.model.PessoaFisica;
 import br.com.benezinhobank.pessoa.model.PessoaJuridica;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -48,6 +50,27 @@ public class Main {
         holding.setNome("Benezinho Holding");
         holding.setRazaoSocial("Benezinho Holding");
 
+        ArrayList<PessoaFisica> Socios= new ArrayList<PessoaFisica>();
+
+        PessoaFisica mike = new PessoaFisica();
+        mike.setCPF("123.123.123-12");
+        mike.setNome("múcleon");
+        mike.setNascimento(LocalDate.of(1977,3,8));
+        PessoaFisica henry = new PessoaFisica();
+        henry.setCPF("123.123.123-12");
+        henry.setNome("henry");
+        henry.setNascimento(LocalDate.of(1977,3,8));
+        PessoaFisica cu = new PessoaFisica();
+        cu.setCPF("123.123.123-12");
+        cu.setNome("cu");
+        cu.setNascimento(LocalDate.of(1977,3,8));
+
+        Socios.add(mike);
+        Socios.add(henry);
+        Socios.add(cu);
+        Socios.add(bene);
+        holding.setSocios(Socios);
+
         ContaCorrente ccH = new ContaCorrente();
         ccH.setNumero("3-7");
         ccH.setLimite(800_000);
@@ -55,7 +78,8 @@ public class Main {
         ccH.setTitular(bene);
         ccH.setAgencia(osasco);
 
-        System.out.println(ccH);
+        System.out.println(holding);
+
 
 
     }

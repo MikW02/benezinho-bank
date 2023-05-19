@@ -2,8 +2,7 @@ package br.com.benezinhobank.model;
 
 public class Agencia {
 
-   private String numero;
-
+    private String numero;
    private String nome;
 
    private Banco banco;

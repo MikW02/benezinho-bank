@@ -1,12 +1,15 @@
 package br.com.benezinhobank.pessoa.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class PessoaJuridica extends  Pessoa{
 
     private String CNPJ;
 
     private String razaoSocial;
+
+    private ArrayList<PessoaFisica> Socios= new ArrayList<PessoaFisica>();
 
 
     public PessoaJuridica() {
@@ -34,12 +37,22 @@ public class PessoaJuridica extends  Pessoa{
         this.razaoSocial = razaoSocial;
     }
 
+    public ArrayList<PessoaFisica> getSocios() {
+        return Socios;
+    }
+
+    public void setSocios(ArrayList<PessoaFisica> socios) {
+        Socios = socios;
+
+
+    }
 
     @Override
     public String toString() {
-        return "PessoaJuridica{" +
+        return "\nPessoaJuridica{" +
                 "CNPJ='" + CNPJ + '\'' +
                 ", razaoSocial='" + razaoSocial + '\'' +
+                ", Socios=" + Socios +
                 "} " + super.toString();
     }
 }

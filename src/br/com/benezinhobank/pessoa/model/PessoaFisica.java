@@ -37,7 +37,7 @@ public class PessoaFisica extends Pessoa {
 
     @Override
     public String toString() {
-        return "PessoaFisica{" +
+        return "\nPessoaFisica{" +
                 "CPF='" + CPF + '\'' +
                 ", mae=" + mae +
                 "} " + super.toString();
